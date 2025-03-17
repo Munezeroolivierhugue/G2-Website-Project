@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Project</title>
 </head>
+<script>
+    const loadComponents = (id, url) =>  {
+        fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+            document.getElementById(id).innerHTML = html;
+        });
+    }
+
+    window.onload = () => {
+        loadComponents('button', 'src/components/Button.html');
+    }
+</script>
 <body>
-    
+    Click me 👇
+    <div id="button"></div>
 </body>
 </html>
