@@ -19,17 +19,23 @@
     }
 
     window.onload = () => {
-        loadComponents('logo', 'src/components/Logo.html');
+        loadComponents('logo', 'src/components/Logo.html',()=>{
+            document.querySelector(".nav-img").addEventListener('click',()=>{
+                
+            })
+
+        });
         loadComponents('name', 'src/components/Name.html');
         loadComponents('menu', 'src/components/Menu.html');
     }
 </script>
 
 <body>
-    <header class="grid grid-cols-3 bg-transparent fixed w-full">
+    <header class="flex justify-between bg-transparent px-3 sm:px-7 fixed w-full">
         <div id="logo" class=""></div>
         <div id="name" class=""></div>
-        <div id="menu" class="flex flex-col items-end"></div>
+        <div id="menu" class="sm:flex hidden flex-col items-end"></div>
+        <img src="/assets/images/Group 4.svg" class="nav-img sm:hidden"/>
     </header>
     
 </body>
