@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +10,28 @@
 
 </head>
 <script>
-    const loadComponents = (id, url) =>  {
+    const loadComponents = (id, url) => {
         fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-            document.getElementById(id).innerHTML = html;
-        });
+            .then((response) => response.text())
+            .then((html) => {
+                document.getElementById(id).innerHTML = html;
+            });
     }
 
     window.onload = () => {
-        loadComponents('button', 'src/components/Button.html');
+        loadComponents('logo', 'src/components/Logo.html');
+        loadComponents('name', 'src/components/Name.html');
+        loadComponents('menu', 'src/components/Menu.html');
     }
 </script>
-<body class="text-blue-950">
-    Click me 👇
+
+<body>
     <div id="button" class="bg-blue-500"></div>
-    
+    <header class="grid grid-cols-3 bg-transparent fixed w-full">
+        <div id="logo" class=""></div>
+        <div id="name" class=""></div>
+        <div id="menu" class="flex flex-col items-end"></div>
+    </header>
 </body>
+
 </html>
