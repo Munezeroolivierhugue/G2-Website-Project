@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@layer utilities {
+    .bg-service {
+      background-image: url('../assets/images/vector 5.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+}

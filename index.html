@@ -19,11 +19,15 @@
         loadComponents('service1', 'src/components/Serviceparagraph.html');
         loadComponents('service2', 'src/components/Servicesvg.html');
         loadComponents('servicedp', 'src/components/Servicedescription1.html');
+        loadComponents('servicedp2', 'src/components/Servicedescription2.html');
     }
 </script>
 <body>
     <div id="service1" class="flex justify-center py-12"></div>
-    <div id="service2" class="flex flex-col items-center justify-center"></div> 
-    <div id="servicedp" class="flex flex-row gap-2 items-center"></div>    
+    <div id="service2" class="flex flex-col items-center justify-center"></div>    
+    <div class="flex flex-row justify-evenly py-12 w-full">
+        <div id="servicedp" class=" gap-4"></div>
+        <div id="servicedp2" class="bg-service w-32"></div>
+    </div>
 </body>
 </html>
