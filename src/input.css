@@ -1,1 +1,9 @@
 @import "tailwindcss";
+@layer utilities {
+    .bg-reference {
+      background-image: url('../Assets/images/refbg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+   
+  }
