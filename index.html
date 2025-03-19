@@ -16,11 +16,14 @@
     }
 
     window.onload = () => {
-        loadComponents('button', 'src/components/Button.html');
+        loadComponents('service1', 'src/components/Serviceparagraph.html');
+        loadComponents('service2', 'src/components/Servicesvg.html');
+        loadComponents('servicedp', 'src/components/Servicedescription1.html');
     }
 </script>
-<body class="text-blue-950">
-    Click me 👇
-    <div id="button" class="bg-blue-500"></div>
+<body>
+    <div id="service1" class="flex justify-center py-12"></div>
+    <div id="service2" class="flex flex-col items-center justify-center"></div> 
+    <div id="servicedp" class="flex flex-row gap-2 items-center"></div>    
 </body>
 </html>
