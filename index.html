@@ -16,11 +16,23 @@
     }
 
     window.onload = () => {
-        loadComponents('button', 'src/components/Button.html');
+        loadComponents('address', 'src/components/Address.html');
+        loadComponents('contact', 'src/components/Contact.html');
+        loadComponents('impressum', 'src/components/Impressum.html');
+        loadComponents('insta', 'src/components/Insta.html');
+        loadComponents('link', 'src/components/Linkedin.html');
+        loadComponents('red', 'src/components/Redsvg.html');
+
     }
 </script>
-<body class="text-blue-950">
-    Click me 👇
-    <div id="button" class="bg-blue-500"></div>
+<body>
+    <div id="red" class="flex justify-center pt-12"></div>
+    <footer class="grid grid-cols-5 px-8  text-lg font-semibold pt-32">
+        <div id="address" class="flex flex-col   "></div>
+        <div id="contact" class="flex flex-col text-[16px]"></div>
+        <p id="link" class="flex flex-col   items-center"></p>
+        <p id="insta" class="flex flex-col   items-center"></p>
+        <div id="impressum" class="flex flex-col  items-end"></div>
+    </footer>
 </body>
 </html>
