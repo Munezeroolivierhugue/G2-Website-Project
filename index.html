@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Project</title>
     <link href="./src/output.css" rel="stylesheet">
+
+
 </head>
 <script>
-    const loadComponents = (id, url) =>  {
+    const loadComponents = (id, url) => {
         fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-            document.getElementById(id).innerHTML = html;
-        });
+            .then((response) => response.text())
+            .then((html) => {
+                document.getElementById(id).innerHTML = html;
+            });
     }
 
     window.onload = () => {
-        loadComponents('button', 'src/components/Button.html');
+        loadComponents('logo', 'src/components/Logo.html');
+        loadComponents('name', 'src/components/Name.html');
+        loadComponents('menu', 'src/components/Menu.html');
     }
 </script>
-<body class="text-blue-950">
-    Click me 👇
-    <div id="button" class="bg-blue-500"></div>
+
+<body>
+    <header class="flex justify-between bg-transparent px-3 sm:px-7 fixed w-full text-green-800">
+        <div id="logo" class=""></div>
+        <div id="name" class=""></div>
+        <div id="menu" class="sm:flex hidden flex-col items-end"></div>
+        <img src="/assets/images/Group 5.svg" class="nav-img sm:hidden"/>
+    </header>
+
 </body>
+
 </html>
