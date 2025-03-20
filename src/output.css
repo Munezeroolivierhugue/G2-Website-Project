@@ -6,8 +6,14 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-green-900: oklch(0.393 0.095 152.535);
     --color-blue-500: oklch(0.623 0.214 259.815);
-    --color-black: #000;
+    --color-blue-950: oklch(0.282 0.091 267.935);
+    --color-gray-200: oklch(0.928 0.006 264.531);
+    --spacing: 0.25rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -164,10 +170,81 @@
   }
 }
 @layer utilities {
-  .bg-black {
-    background-color: var(--color-black);
+  .absolute {
+    position: absolute;
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
   }
+  .bg-gray-200 {
+    background-color: var(--color-gray-200);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .p-28 {
+    padding: calc(var(--spacing) * 28);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-blue-950 {
+    color: var(--color-blue-950);
+  }
+  .text-green-900 {
+    color: var(--color-green-900);
+  }
+  .sm\:p-5 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 5);
+    }
+  }
+  .md\:p-10 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:p-28 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 28);
+    }
+  }
+  .md\:text-2xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .lg\:p-28 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 28);
+    }
+  }
+}
+@font-face {
+  font-family: font;
+  src: url();
+}
+.custom-bullets li::marker {
+  font-size: 0.6em;
+}
+.about-page {
+  text-color: #00672E;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
 }
