@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: font;
+    src: url();
+}
+
+
+.custom-bullets li::marker {
+    font-size: 0.6em; /* Adjust this value as needed */
+  }
+
+.about-page {
+
+    text-color:#00672E
+
+
+  }
