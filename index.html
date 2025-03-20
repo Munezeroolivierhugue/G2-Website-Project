@@ -18,9 +18,15 @@
     window.onload = () => {
         loadComponents('button', 'src/components/Button.html');
         loadComponents('h1', 'src/components/hero1.html');
+        loadComponents('h2', 'src/components/hero2.html');
     }
 </script>
 <body>
-    <div id='h1' class=" flex flex-col text-green-800 pl-24 mt-32 "></div>
+    <div class="flex flex-row gap-32 items-center justify-center py-32">
+        <div id='h1' class=" flex flex-col text-green-800"></div>
+    <div id='h2' class=" flex flex-col text-green-800"></div>
+
+    </div>
+    
 </body>
 </html>
