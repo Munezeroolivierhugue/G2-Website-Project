@@ -24,17 +24,30 @@
         loadComponents('insta', 'src/components/Insta.html');
         loadComponents('link', 'src/components/Linkedin.html');
         loadComponents('red', 'src/components/Redsvg.html');
+        loadComponents('date', 'src/components/Date.html');
+        loadComponents('sadd', 'src/components/Saddress.html');
+        loadComponents('scont', 'src/components/Scontact.html');
+        loadComponents('simpres', 'src/components/Simpressum.html');
+        loadComponents('scont', 'src/components/Scontact.html');
+
+
 
     }
 </script>
 <body>
-    <div id="red" class="flex justify-center pt-12"></div>
-    <footer class="grid grid-cols-5 px-8  text-lg font-semibold pt-32">
-        <div id="address" class="flex flex-col   "></div>
-        <div id="contact" class="flex flex-col text-[16px]"></div>
+    <div id="red" class="flex justify-center  pt-12"></div> 
+    <div class="lg:hidden flex flex-col gap-6 font-[500] px-6 text-lg pt-25 ">
+    <div id="sadd" class=" flex flex-col   "></div>
+    <div id="scont" class=" flex-col text-[16px]"></div>
+    </div>
+    <footer class="flex justify-between items-center pb-10 lg:items-start lg:font-bold w-screen px-6 pt-10 lg:px-8 lg:mb-5  font-[500] lg:pt-32">
+        <div id="address" class=" hidden lg:flex flex-col"></div>
+        <div id="contact" class=" hidden lg:flex flex-col text-[16px]"></div>
+        <div id="date" class="lg:hidden"></div>
+        <div id="simpres" class="lg:hidden"></div>
         <p id="link" class="flex flex-col   items-center"></p>
         <p id="insta" class="flex flex-col   items-center"></p>
-        <div id="impressum" class="flex flex-col  items-end"></div>
+        <div id="impressum" class="lg:flex hidden flex-col  items-end"></div>
     </footer>
 </body>
 </html>
