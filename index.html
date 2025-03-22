@@ -10,34 +10,40 @@
 
 </head>
 <script>
-    const loadComponents = (id, url) => {
+    const loadComponents = (id, url,callback) => {
         fetch(url)
             .then((response) => response.text())
             .then((html) => {
                 document.getElementById(id).innerHTML = html;
+                if (callback) callback();
             });
     }
 
     window.onload = () => {
-        loadComponents('logo', 'src/components/Logo.html',()=>{
-            document.querySelector(".nav-img").addEventListener('click',()=>{
-                
-            })
-
-        });
+        loadComponents('logo', 'src/components/Logo.html');
         loadComponents('name', 'src/components/Name.html');
-        loadComponents('menu', 'src/components/Menu.html');
+        loadComponents('menu', 'src/components/Menu.html', () => {
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelector(".nav-ui").classList.toggle("hidden");
+
+            document.querySelector(".open").classList.toggle("hidden");
+            document.querySelector(".close").classList.toggle("hidden");
+          });
+        });
+      });
+      loadComponents('navigation', 'src/components/navigation.html');
     }
 </script>
 
 <body>
-    <header class="flex justify-between bg-transparent px-3 sm:px-7 fixed w-full">
-        <div id="logo" class=""></div>
-        <div id="name" class=""></div>
-        <div id="menu" class="sm:flex hidden flex-col items-end"></div>
-        <img src="/assets/images/Group 4.svg" class="nav-img sm:hidden"/>
+    <header class="flex justify-between z-50  px-3 sm:px-10  items-center fixed  sm:fixed w-full">
+        <div id="logo" class="sticky sm:fixed"></div>
+        <div id="name" class="font-bold text-3xl "></div>
+        <div id="menu" class=""></div>
     </header>
+    <div id="navigation" class=" "></div>
     
 </body>
 
-</html>
+</html> 
