@@ -7,7 +7,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-green-800: oklch(0.448 0.119 151.328);
-    --color-gray-200: oklch(0.928 0.006 264.531);
+    --color-gray-100: oklch(0.967 0.003 264.542);
     --spacing: 0.25rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
@@ -180,8 +180,8 @@
   .list-disc {
     list-style-type: disc;
   }
-  .bg-gray-200 {
-    background-color: var(--color-gray-200);
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
@@ -213,15 +213,14 @@
     }
   }
 }
-@font-face {
-  font-family: font;
-  src: url();
-}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 .custom-bullets li::marker {
+  font-family: 'Outfit', sans-serif;
   font-size: 0.6em;
+  font-style: normal;
 }
-.about-page {
-  text-color: #00672E;
+body {
+  font-family: 'Outfit', sans-serif;
 }
 @property --tw-font-weight {
   syntax: "*";
