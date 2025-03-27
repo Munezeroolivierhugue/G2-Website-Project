@@ -11,6 +11,7 @@
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --font-weight-medium: 500;
+    --font-weight-extrabold: 800;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -23,7 +24,8 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
-    --color-body: #EFECEA;
+    --color-body: #efecea;
+    --font-outfit: "Outfit", sans-serif;
   }
 }
 @layer base {
@@ -174,38 +176,20 @@
   .relative {
     position: relative;
   }
-  .top-10 {
-    top: calc(var(--spacing) * 10);
-  }
-  .top-16 {
-    top: calc(var(--spacing) * 16);
-  }
   .right-0 {
     right: calc(var(--spacing) * 0);
-  }
-  .right-56 {
-    right: calc(var(--spacing) * 56);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
-  .bottom-7 {
-    bottom: calc(var(--spacing) * 7);
-  }
-  .bottom-20 {
-    bottom: calc(var(--spacing) * 20);
-  }
-  .bottom-72 {
-    bottom: calc(var(--spacing) * 72);
+  .bottom-9 {
+    bottom: calc(var(--spacing) * 9);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
   .left-72 {
     left: calc(var(--spacing) * 72);
-  }
-  .left-96 {
-    left: calc(var(--spacing) * 96);
   }
   .z-1 {
     z-index: 1;
@@ -228,12 +212,6 @@
   .z-7 {
     z-index: 7;
   }
-  .-mb-16 {
-    margin-bottom: calc(var(--spacing) * -16);
-  }
-  .ml-52 {
-    margin-left: calc(var(--spacing) * 52);
-  }
   .flex {
     display: flex;
   }
@@ -242,9 +220,6 @@
   }
   .h-screen {
     height: 100vh;
-  }
-  .w-96 {
-    width: calc(var(--spacing) * 96);
   }
   .w-full {
     width: 100%;
@@ -261,9 +236,6 @@
   .justify-center {
     justify-content: center;
   }
-  .overflow-hidden {
-    overflow: hidden;
-  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -274,9 +246,12 @@
   .text-center {
     text-align: center;
   }
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  .font-outfit {
+    font-family: var(--font-outfit);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -292,7 +267,72 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .lg\:top-10 {
+    @media (width >= 64rem) {
+      top: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:top-16 {
+    @media (width >= 64rem) {
+      top: calc(var(--spacing) * 16);
+    }
+  }
+  .lg\:right-52 {
+    @media (width >= 64rem) {
+      right: calc(var(--spacing) * 52);
+    }
+  }
+  .lg\:bottom-20 {
+    @media (width >= 64rem) {
+      bottom: calc(var(--spacing) * 20);
+    }
+  }
+  .lg\:bottom-72 {
+    @media (width >= 64rem) {
+      bottom: calc(var(--spacing) * 72);
+    }
+  }
+  .lg\:left-96 {
+    @media (width >= 64rem) {
+      left: calc(var(--spacing) * 96);
+    }
+  }
+  .lg\:-mb-16 {
+    @media (width >= 64rem) {
+      margin-bottom: calc(var(--spacing) * -16);
+    }
+  }
+  .lg\:ml-56 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 56);
+    }
+  }
+  .lg\:w-96 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 96);
+    }
+  }
+  .lg\:scale-110 {
+    @media (width >= 64rem) {
+      --tw-scale-x: 110%;
+      --tw-scale-y: 110%;
+      --tw-scale-z: 110%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .lg\:overflow-hidden {
+    @media (width >= 64rem) {
+      overflow: hidden;
+    }
+  }
+  .lg\:text-5xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
 }
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -306,4 +346,19 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
