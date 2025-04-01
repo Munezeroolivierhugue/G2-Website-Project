@@ -8,14 +8,8 @@
       "Courier New", monospace;
     --color-black: #000;
     --spacing: 0.25rem;
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-light: 300;
-    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
@@ -173,9 +167,6 @@
   }
 }
 @layer utilities {
-  .my-10 {
-    margin-block: calc(var(--spacing) * 10);
-  }
   .table {
     display: table;
   }
@@ -189,33 +180,21 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .py-44 {
-    padding-block: calc(var(--spacing) * 44);
+  .py-28 {
+    padding-block: calc(var(--spacing) * 28);
   }
-  .pr-36 {
-    padding-right: calc(var(--spacing) * 36);
+  .pr-16 {
+    padding-right: calc(var(--spacing) * 16);
+  }
+  .pr-20 {
+    padding-right: calc(var(--spacing) * 20);
   }
   .text-right {
     text-align: right;
   }
-  .font-mono {
-    font-family: var(--font-mono);
-  }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .font-light {
-    --tw-font-weight: var(--font-weight-light);
-    font-weight: var(--font-weight-light);
-  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
-  }
-  .font-normal {
-    --tw-font-weight: var(--font-weight-normal);
-    font-weight: var(--font-weight-normal);
   }
   .text-black {
     color: var(--color-black);
@@ -227,24 +206,36 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .md\:py-40 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 40);
+    }
+  }
+  .md\:pr-32 {
+    @media (width >= 48rem) {
+      padding-right: calc(var(--spacing) * 32);
+    }
+  }
   .md\:text-2xl {
     @media (width >= 48rem) {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
   }
-  .md\:text-3xl {
-    @media (width >= 48rem) {
-      font-size: var(--text-3xl);
-      line-height: var(--tw-leading, var(--text-3xl--line-height));
+  .lg\:py-44 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 44);
+    }
+  }
+  .lg\:pr-36 {
+    @media (width >= 64rem) {
+      padding-right: calc(var(--spacing) * 36);
     }
   }
 }
 @layer utilities {
   .bg-reference {
     background-image: url('../Assets/images/refbg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }
 @property --tw-border-style {
