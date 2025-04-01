@@ -10,11 +10,11 @@
     --spacing: 0.25rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
-    --font-weight-medium: 500;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-normal: 400;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -171,6 +171,9 @@
   }
 }
 @layer utilities {
+  .w-full {
+    width: 100%;
+  }
   .py-28 {
     padding-block: calc(var(--spacing) * 28);
   }
@@ -184,9 +187,9 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .text-black {
     color: var(--color-black);
@@ -201,10 +204,16 @@
       padding-right: calc(var(--spacing) * 32);
     }
   }
-  .md\:text-2xl {
+  .md\:text-3xl {
     @media (width >= 48rem) {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .md\:text-xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .lg\:py-44 {
@@ -217,16 +226,18 @@
       padding-right: calc(var(--spacing) * 36);
     }
   }
-  .lg\:text-5xl {
+  .lg\:text-3xl {
     @media (width >= 64rem) {
-      font-size: var(--text-5xl);
-      line-height: var(--tw-leading, var(--text-5xl--line-height));
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
     }
   }
 }
 @layer utilities {
   .bg-reference {
-    background-image: url('../Assets/images/refbg.png');
+    background-image: url("../Assets/images/refbg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 }
 @property --tw-font-weight {
