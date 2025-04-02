@@ -1,5 +1,10 @@
 @import "tailwindcss";
-/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@layer utilities {
+  .clip-path-custom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 38% 88%, 0 85%);
+  }
+}
+
 @theme {
-    --font-outfit: "Outfit", "sans-serif";
-} */
+  --color-yellow-250: #ffe800;
+}
