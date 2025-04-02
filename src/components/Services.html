@@ -1,0 +1,20 @@
+<div>
+    <script>
+    const loadComponents = (id, url) =>  {
+        fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+            document.getElementById(id).innerHTML = html;
+        });
+    }
+
+    window.onload = () => {
+        loadComponents('service1', './Serviceparagraph.html');
+        loadComponents('service2', './Servicesvg.html');
+        loadComponents('servicedp', './Servicedescription.html');
+    }
+</script>
+       <div id="service1"></div>
+       <div id="service2"></div>
+       <div id="servicedp"></div>
+</div>
