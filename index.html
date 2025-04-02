@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Project</title>
-    <link href="./src/output.css" rel="stylesheet">
-</head>
-<script>
-    const loadComponents = (id, url) =>  {
-        fetch(url)
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
         .then((response) => response.text())
         .then((html) => {
-            document.getElementById(id).innerHTML = html;
+          document.getElementById(id).innerHTML = html;
         });
-    }
+    };
 
     window.onload = () => {
-        loadComponents('color', 'src/components/colors.html');
-    }
-</script>
-<body class="bg-body font-outfit">
-        <div id="color" class="font-extrabold">
-        </div>
-</body>
+      loadComponents("color", "src/components/colors.html");
+      loadComponents("reference", "src/sections/Reference.html");
+    };
+    
+  </script>
+  
+  <body class="bg-body font-outfit">
+    <div id="color" class="font-extrabold"></div>
+    <div id="reference" class="w-full"></div>
+  </body>
 </html>
