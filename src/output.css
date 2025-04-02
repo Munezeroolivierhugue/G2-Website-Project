@@ -7,7 +7,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-800: oklch(0.278 0.033 256.848);
-    --color-gray-900: oklch(0.21 0.034 264.665);
     --spacing: 0.25rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
@@ -26,6 +25,7 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
+    --color-yellow-250: #ffe800;
   }
 }
 @layer base {
@@ -170,8 +170,14 @@
   }
 }
 @layer utilities {
+  .relative {
+    position: relative;
+  }
   .table {
     display: table;
+  }
+  .h-full {
+    height: 100%;
   }
   .w-full {
     width: 100%;
@@ -186,11 +192,20 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .py-28 {
-    padding-block: calc(var(--spacing) * 28);
+  .bg-yellow-250 {
+    background-color: var(--color-yellow-250);
+  }
+  .pt-28 {
+    padding-top: calc(var(--spacing) * 28);
   }
   .pr-16 {
     padding-right: calc(var(--spacing) * 16);
+  }
+  .pb-56 {
+    padding-bottom: calc(var(--spacing) * 56);
+  }
+  .pb-60 {
+    padding-bottom: calc(var(--spacing) * 60);
   }
   .text-right {
     text-align: right;
@@ -206,9 +221,6 @@
   .text-gray-800 {
     color: var(--color-gray-800);
   }
-  .text-gray-900 {
-    color: var(--color-gray-900);
-  }
   .underline {
     text-decoration-line: underline;
   }
@@ -216,14 +228,19 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
-  .md\:py-40 {
+  .md\:pt-40 {
     @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 40);
+      padding-top: calc(var(--spacing) * 40);
     }
   }
   .md\:pr-32 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 32);
+    }
+  }
+  .md\:pb-80 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 80);
     }
   }
   .md\:text-2xl {
@@ -232,9 +249,9 @@
       line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
   }
-  .lg\:py-44 {
+  .lg\:pt-44 {
     @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 44);
+      padding-top: calc(var(--spacing) * 44);
     }
   }
   .lg\:pr-36 {
@@ -242,12 +259,15 @@
       padding-right: calc(var(--spacing) * 36);
     }
   }
+  .lg\:pb-96 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 96);
+    }
+  }
 }
 @layer utilities {
-  .bg-reference {
-    background-image: url("../Assets/images/refbg.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  .clip-path-custom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 38% 88%, 0 85%);
   }
 }
 @property --tw-border-style {
