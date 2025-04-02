@@ -6,8 +6,13 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-gray-800: oklch(0.278 0.033 256.848);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --font-weight-medium: 500;
@@ -26,6 +31,7 @@
     );
     --color-body: #efecea;
     --font-outfit: "Outfit", sans-serif;
+    --color-yellow-250: #ffe800;
   }
 }
 @layer base {
@@ -215,6 +221,9 @@
   .flex {
     display: flex;
   }
+  .h-full {
+    height: 100%;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -230,11 +239,30 @@
   .bg-body {
     background-color: var(--color-body);
   }
+  .bg-yellow-250 {
+    background-color: var(--color-yellow-250);
+  }
+  .pt-28 {
+    padding-top: calc(var(--spacing) * 28);
+  }
+  .pr-16 {
+    padding-right: calc(var(--spacing) * 16);
+  }
+  .pb-60 {
+    padding-bottom: calc(var(--spacing) * 60);
+  }
   .text-center {
     text-align: center;
   }
+  .text-right {
+    text-align: right;
+  }
   .font-outfit {
     font-family: var(--font-outfit);
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .font-extrabold {
     --tw-font-weight: var(--font-weight-extrabold);
@@ -244,8 +272,32 @@
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
   }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
   .text-white {
     color: var(--color-white);
+  }
+  .md\:pt-40 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 40);
+    }
+  }
+  .md\:pr-32 {
+    @media (width >= 48rem) {
+      padding-right: calc(var(--spacing) * 32);
+    }
+  }
+  .md\:pb-80 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 80);
+    }
+  }
+  .md\:text-2xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
   }
   .lg\:top-10 {
     @media (width >= 64rem) {
@@ -305,6 +357,21 @@
       overflow: hidden;
     }
   }
+  .lg\:pt-44 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 44);
+    }
+  }
+  .lg\:pr-36 {
+    @media (width >= 64rem) {
+      padding-right: calc(var(--spacing) * 36);
+    }
+  }
+  .lg\:pb-96 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 96);
+    }
+  }
   .lg\:text-5xl {
     @media (width >= 64rem) {
       font-size: var(--text-5xl);
@@ -313,6 +380,11 @@
   }
 }
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@layer utilities {
+  .clip-path-custom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 38% 88%, 0 85%);
+  }
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
