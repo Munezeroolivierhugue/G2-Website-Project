@@ -1,19 +1,52 @@
 <div>
-    <script>
-        const loadComponents = (id, url) =>  {
-            fetch(url)
-            .then((response) => response.text())
-            .then((html) => {
-                document.getElementById(id).innerHTML = html;
-            });
-        }
-        
-        loadComponents('service1', './Serviceparagraph.html');
-        loadComponents('service2', './Servicesvg.html');
-        loadComponents('servicedp', './Servicedescription.html');
-    </script>
-    <div id="service1"></div>
-    <div id="service2"></div>
-    <div id="servicedp"></div>
-    HELLO
+  <div id="service1" class="flex justify-center py-12">
+    <p
+      class="text-2xl md:text-4xl lg:text-5xl font-normal max-w-xl md:max-w-6xl lg:px-4 px-12"
+    >
+      We are a Berlin-based communications agency specialising in helping
+      companies and brands find their voice and position themselves. Whether
+      it's brand building, identity sharpening, or communication strategy, we
+      bring a fresh perspective to established structures, develop tailor-made
+      communication solutions, and ensure that messages resonate. With over a
+      decade of experience, we have honed our skills in giving brands their
+      unmistakable identity and making them visible in the long term.
+    </p>
+  </div>
+
+  <div id="service2" class="flex flex-col items-center justify-center py-24">
+    <img src="/assets/images/yellowsvg.svg" alt="" class="w-48" />
+  </div>
+
+  <div
+    id="servicedp"
+    class="container flex flex-col lg:flex-row text-center items-center justify-center px-12 md:py-24 py-12 md:mx-auto w-full md:gap-64 gap-40"
+  >
+    <ul
+      class="space-y-12 md:space-y-20 lg:space-y-24 text-2xl md:text-5xl max-w-5xl lg:max-w-lg md:max-w-5xl text-left font-semibold"
+    >
+      <li>Brand strategy</li>
+      <li>Corporate identity & Website development</li>
+      <li>SEO & copywriting</li>
+      <li>Media Relations</li>
+      <li>Digital marketing & content production</li>
+      <li>Influencer relations</li>
+    </ul>
+    <div class="relative mb-12 md:self-end">
+      <img
+        src="/assets/images/greensvg.svg"
+        alt="Green Shape"
+        class="z-0 scale-y-125 md:scale-y-110"
+      />
+      <p
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white leading-relaxed w-80 md:w-96 lg:w-96 text-sm md:text-xl lg:text-lg pl-14 pr-8 text-left font-normal z-10"
+      >
+        Our strategic approach is a collaborative journey that starts with
+        analyzing the initial situation and leads to messages that cut through
+        the information overload. We take care of content production and
+        maintain relationships with multipliers to position your brand in the
+        best possible way. From analysis to implementation, we accompany you
+        every step of the way, ensuring that every measure is effective.
+      </p>
+    </div>
+  </div>
 </div>
