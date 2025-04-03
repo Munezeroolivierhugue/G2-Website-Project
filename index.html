@@ -23,7 +23,6 @@
         document.querySelectorAll(".nav-btn").forEach((btn) => {
           btn.addEventListener("click", () => {
             document.querySelector(".nav-ui").classList.toggle("hidden");
-
             document.querySelector(".open").classList.toggle("hidden");
             document.querySelector(".close").classList.toggle("hidden");
           });
@@ -31,6 +30,7 @@
       });
       loadComponents('navigation', 'src/sections/navigation.html');
       loadComponents("reference", "src/sections/Reference.html");
+      loadComponents('services', 'src/sections/Services.html');
     }
 </script>
 <body>
@@ -40,6 +40,7 @@
         <div id="menu" ></div>
     </header>
     <div id="navigation" ></div>
+    <div id="services"></div>
     <div id="reference" class="w-full"></div>
 </body>
 </html>
