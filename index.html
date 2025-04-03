@@ -6,20 +6,7 @@
     <title>Website Project</title>
     <link href="./src/output.css" rel="stylesheet" />
   </head>
-  <script>
-    const loadComponents = (id, url) => {
-      fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById(id).innerHTML = html;
-        });
-    };
-
-    window.onload = () => {
-      loadComponents("about-page", "src/components/About.html");
-    };
-  </script>
   <body>
-    <div id="about-page" class="about-page"></div>
+    <a href="privacyPage.html">go to Privacy page</a>
   </body>
 </html>
