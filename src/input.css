@@ -1,2 +1,10 @@
 @import "tailwindcss";
+@layer utilities {
+  .clip-path-custom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 38% 88%, 0 85%);
+  }
+}
 
+@theme {
+  --color-yellow-250: #ffe800;
+}
