@@ -251,6 +251,9 @@
   .mt-50 {
     margin-top: calc(var(--spacing) * 50);
   }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
@@ -336,6 +339,12 @@
   .resize {
     resize: both;
   }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -391,6 +400,9 @@
   .bg-yellow-250 {
     background-color: var(--color-yellow-250);
   }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -399,6 +411,9 @@
   }
   .px-7 {
     padding-inline: calc(var(--spacing) * 7);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
   }
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
@@ -430,6 +445,9 @@
   .pt-28 {
     padding-top: calc(var(--spacing) * 28);
   }
+  .pt-32 {
+    padding-top: calc(var(--spacing) * 32);
+  }
   .pt-56 {
     padding-top: calc(var(--spacing) * 56);
   }
@@ -447,6 +465,9 @@
   }
   .pb-60 {
     padding-bottom: calc(var(--spacing) * 60);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
   }
   .pl-8 {
     padding-left: calc(var(--spacing) * 8);
@@ -566,6 +587,11 @@
       padding-inline: calc(var(--spacing) * 10);
     }
   }
+  .sm\:pl-8 {
+    @media (width >= 40rem) {
+      padding-left: calc(var(--spacing) * 8);
+    }
+  }
   .sm\:text-5xl {
     @media (width >= 40rem) {
       font-size: var(--text-5xl);
@@ -652,6 +678,11 @@
       align-self: flex-end;
     }
   }
+  .md\:p-10 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 10);
+    }
+  }
   .md\:py-24 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 24);
@@ -670,6 +701,16 @@
   .md\:pb-80 {
     @media (width >= 48rem) {
       padding-bottom: calc(var(--spacing) * 80);
+    }
+  }
+  .md\:pl-0 {
+    @media (width >= 48rem) {
+      padding-left: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:pl-8 {
+    @media (width >= 48rem) {
+      padding-left: calc(var(--spacing) * 8);
     }
   }
   .md\:text-end {
@@ -761,6 +802,11 @@
       }
     }
   }
+  .lg\:p-28 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 28);
+    }
+  }
   .lg\:px-4 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 4);
@@ -815,6 +861,15 @@
       font-weight: var(--font-weight-bold);
     }
   }
+}
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+.custom-bullets li::marker {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.6em;
+  font-style: normal;
+}
+body {
+  font-family: "Outfit", sans-serif;
 }
 @layer utilities {
   .clip-path-custom {
