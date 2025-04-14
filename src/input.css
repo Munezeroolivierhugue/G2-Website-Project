@@ -1,22 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-
+@theme {
+  --color-body: #efecea;
+  --font-outfit: 'Outfit', 'sans-serif';
+  --color-yellow-250: #ffe800;
+}
 .custom-bullets li::marker {
-  font-family: "Outfit", sans-serif;
   font-size: 0.6em;
   font-style: normal;
 }
 
-body {
-  font-family: "Outfit", sans-serif;
-}
 @layer utilities {
   .clip-path-custom {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 38% 88%, 0 85%);
   }
-}
-
-@theme {
-  --color-yellow-250: #ffe800;
 }
