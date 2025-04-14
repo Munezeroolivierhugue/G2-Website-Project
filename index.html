@@ -32,7 +32,29 @@
       loadComponents("navigation", "src/sections/navigation.html");
       loadComponents("color", "src/sections/colors.html");
       loadComponents("reference", "src/sections/Reference.html");
-      loadComponents('services', 'src/sections/Services.html');
+      loadComponents('services', 'src/sections/Services.html', () => {
+                // Add scroll event listener after services are loaded
+                const yellowSvg = document.getElementById('yellow-svg');
+                const service2 = document.getElementById('service2');
+                const referenceSection = document.getElementById('reference');
+
+                window.addEventListener('scroll', () => {
+                    const service2Rect = service2.getBoundingClientRect();
+                    const referenceBottom = referenceSection.getBoundingClientRect().bottom;
+
+                    // Check if service2 is in view and reference section is still visible
+                    if (service2Rect.top <= 0 && referenceBottom > 0) {
+                        yellowSvg.style.position = 'fixed';
+                        yellowSvg.style.top = '0';
+                        // yellowSvg.style.left = '50%';
+                        // yellowSvg.style.transform = 'translateX(-50%)';
+                        yellowSvg.style.zIndex = '05';
+                    } else {
+                        yellowSvg.style.position = 'static';
+                        yellowSvg.style.transform = 'none';
+                    }
+                });
+            });
       loadComponents('footer', 'src/sections/footer.html');
     }
 
@@ -41,7 +63,7 @@
     <header class="flex z-10 justify-between px-3 py-2 sm:px-10 items-center lg:items-start fixed w-full">
         <div id="logo" ></div>
         <div id="name" class="py-7"></div>
-        <div id="menu" ></div>
+        <div id="menu"></div>
     </header>
     <div id="navigation" ></div>
     
