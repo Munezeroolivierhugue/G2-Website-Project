@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>imprint</title>
-</head>
-<body>
-    
-</body>
+    <link href="./src/output.css" rel="stylesheet">
+  </head>
+  <script>
+    const loadComponents = (id, url, callback) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+          if (callback) callback();
+        });
+    };
+
+    window.onload = () => {
+        loadComponents('logo', 'src/sections/Logo.html');
+        loadComponents('name', 'src/sections/Name.html');
+        loadComponents('menu', 'src/sections/Menu.html', () => {
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelector(".nav-ui").classList.toggle("hidden");
+            document.querySelector(".open").classList.toggle("hidden");
+            document.querySelector(".close").classList.toggle("hidden");
+          });
+        });
+      });
+      loadComponents("navigation", "src/sections/navigation.html");
+      loadComponents("h1", "src/sections/hero1.html");
+      loadComponents("h2", "src/sections/hero2.html");
+      loadComponents('footer', 'src/sections/footer.html');
+    };
+  </script>
+  <body>
+    <header class="flex z-10 justify-between px-3 py-2 sm:px-10 items-center lg:items-start fixed w-full text-green-800">
+        <div id="logo" ></div>
+        <div id="name" class="py-7"></div>
+        <div id="menu" ></div>
+    </header>
+    <div id="navigation"></div>
+    <div
+      class="flex flex-col sm:flex-col md:flex-row gap-12 items-center justify-center py-32 text-green-800"
+    >
+      <div id="h1" class="flex flex-col"></div>
+      <div id="h2" class="flex flex-col"></div>
+    </div>
+    <div id="footer" class="text-green-800"></div>
+  </body>
 </html>
